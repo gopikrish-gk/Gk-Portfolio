@@ -47,12 +47,42 @@ section{
     
 }
 
+.fade-text {
+  display: inline-block;
+  font-size: 2rem;      /* adjust as needed */
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+.fade-text span {
+  opacity: 0;
+  display: inline;       /* use inline instead of inline-block */
+  animation: fadeIn 0.5s forwards;
+}
+
+.fade-text span:nth-child(1) { animation-delay: 0s; }
+.fade-text span:nth-child(2) { animation-delay: 0.1s; }
+.fade-text span:nth-child(3) { animation-delay: 0.2s; }
+/* Continue for all letters */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
 .home-info p{
     color: #333333;
-    
-    
 }
+    
+/* }
 .home-info h2{
     display: inline-block;
     font-size: 32px;
@@ -79,7 +109,7 @@ section{
 }
 @keyframes fill-text{
     10%,100%{
-        width: 0;
+        width: 10%;
     }
     70%,90%{
         width: 100%;
@@ -89,6 +119,69 @@ section{
 @keyframes display-text{
     25%,100%{
         display: none;
+    }
+} */
+
+
+.animated-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+    white-space: nowrap;
+}
+
+.animated-text span{
+    position: relative;
+}
+
+.animated-text span::before{
+    content: "Youtuber";
+    color: green;
+    animation: words 20s infinite;
+}
+
+.animated-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+        background: #EAEAEA;
+
+    border-left: 2px solid green;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid #ff7f5000;
+    }
+}
+
+@keyframes words {
+    0%,20%{
+        content: "Frontend Developer";
+    }
+    21%,40%{
+        content: "React Developer";
+    }
+    41%,60%{
+        content: "Frontend Developer";
+    }
+    61%,80%{
+        content: "React Developer";
+    }
+    81%,100%{
+        content: "Frontend Developer";
+    }
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
     }
 }
 .home-info p{
