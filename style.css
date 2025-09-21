@@ -122,7 +122,9 @@ section{
     }
 } */
 
-
+.body-text-animated {
+    overflow-x: auto; /* optional: allow horizontal scroll if needed */
+}
 .animated-text{
     font-size: 34px;
     font-weight: 600;
@@ -135,7 +137,7 @@ section{
 }
 
 .animated-text span::before{
-    content: "Youtuber";
+    content: "Frontend Developer";
     color: green;
     animation: words 20s infinite;
 }
@@ -151,12 +153,34 @@ section{
     right: -8px;
     animation: cursor .8s infinite, typing 20s steps(14) infinite;
 }
+@media (max-width: 1024px) {
+    .animated-text {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .animated-text {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .animated-text {
+        font-size: 18px;
+    }
+}
+.home-info .text-animated {
+    overflow-x: auto;
+}
+
 
 @keyframes cursor {
     to{
         border-left: 2px solid #ff7f5000;
     }
 }
+
 
 @keyframes words {
     0%,20%{
@@ -171,9 +195,10 @@ section{
     61%,80%{
         content: "React Developer";
     }
-    81%,100%{
+    61%,80%{
         content: "Frontend Developer";
     }
+   
 }
 
 @keyframes typing {
