@@ -286,7 +286,27 @@ section{
     }
 
 }
+@media (max-width: 768px) {
+    .btn-sci .btn {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+    .btn-sci .sci a {
+        padding: 8px;
+        font-size: 20px;
+    }
+}
 
+@media (max-width: 480px) {
+    .btn-sci .btn {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+    .btn-sci .sci a {
+        padding: 6px;
+        font-size: 18px;
+    }
+}
 
 
 
@@ -562,7 +582,12 @@ section{
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      height: 700px;
+    }
+      @media screen and (max-width:760px){
+        .section-contact{
+            height: 100%;
+        }
     }
 
     .contact-container {
