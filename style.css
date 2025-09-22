@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+/* General Styling & Variables */
+:root {
+    --primary-bg: #f5f5f5;
+    --secondary-bg: #e0e0e0;
+    --text-color: #333;
+    --dark-text: #000;
+    --accent-color: #007bff; /* Example blue, adjust as needed */
+    --highlight-color: green; /* Example blue */
+    --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-body: 'Open Sans', 'Helvetica Neue', sans-serif;
+    --navbar-height: 80px;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+}
+.hero-section{
+    height: 700px;
 }
 
 nav {
@@ -27,8 +41,13 @@ nav {
 }
 
 .nav-link:hover {
-    transition: 2s !important;
-    border-bottom: 1px solid white;
+    transition: 1.05s !important;
+    
+    background-color: green;
+    border-radius: 10px;
+    box-shadow: 0 0 10px green;
+
+ 
 }
 
 section {
@@ -417,6 +436,7 @@ section {
         font-size: 30px;
     }
 } */
+ /*
 #about{
     display: flex;
     justify-content: center;
@@ -534,7 +554,7 @@ section {
     opacity: 0;
 }
 }
-/* For devices between 577px and 760px */
+
 @media screen and (max-width: 760px) {
     .circle {
         width: 450px;
@@ -668,7 +688,7 @@ section {
         opacity: 0;
     }
 }
-/* Extra small devices (up to 376px) */
+
 @media screen and (max-width: 376px) {
     .circle {
         width: 300px;
@@ -691,7 +711,7 @@ section {
 
     .circle:hover {
         width: 320px;
-        height: auto; /* allow height to grow with content */
+        height: auto; 
         border-radius: 20px;
         transition: 1s;
     }
@@ -699,7 +719,7 @@ section {
     .circle:hover img {
         top: 0%;
         left: 10%;
-        width: 40%; /* smaller image when hovered */
+        width: 40%; 
     }
 
     .circle .content {
@@ -719,8 +739,235 @@ section {
         top: 85%;
         left: 15%;
     }
+*/
+/*about style */
+
+.body-about-div {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--primary-bg);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations/absolute positioning */
 }
 
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    min-height: calc(100vh - var(--navbar-height)); /* Full viewport height minus navbar */
+    padding: 60px 40px;
+    background-color: var(--primary-bg);
+    position: relative;
+    overflow: hidden; /* For decorative elements */
+}
+
+.social-sidebar {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 99;
+}
+
+.social-sidebar a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-sidebar a:hover {
+    color: var(--accent-color);
+}
+
+.hero-content {
+    flex: 1; /* Allows text content to take available space */
+    max-width: 500px;
+    margin-right: 80px; /* Space between text and image */
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+    color: var(--dark-text);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 40px;
+    max-width: 450px;
+}
+
+.highlight {
+    font-weight: bold;
+    color: var(--highlight-color);
+    border-bottom: 2px solid var(--highlight-color); /* Underline effect */
+    padding-bottom: 2px;
+}
+
+
+
+
+.hero-image {
+    width: 380px; /* Fixed width for the image container */
+    height: 480px; /* Fixed height for the image container */
+    position: relative;
+    background-color: var(--secondary-bg); /* Background for the image box */
+    border: 1px solid var(--text-color); /* Main border for the box */
+    padding: 20px; /* Inner padding */
+}
+
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    display: block;
+    border: 1px solid var(--dark-text); /* Inner border around the image */
+}
+
+/* Decorative elements for the image */
+.image-decoration-line {
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background-color: var(--dark-text);
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg); /* Rotate to make it vertical */
+}
+
+.image-decoration-squiggly {
+    position: absolute;
+    width: 80px; /* Adjust size */
+    height: 40px; /* Adjust size */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><path d="M0,25 C25,0 75,50 100,25" fill="none" stroke="black" stroke-width="2"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: -20px; /* Position it outside */
+    top: 15%;
+    transform: rotate(10deg);
+}
+
+.image-decoration-dash {
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background-color: red; /* As seen in image */
+    left: -20px;
+    bottom: 10%;
+    transform: rotate(45deg);
+}
+
+.image-decoration-pencil {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><path d="M0,25 Q25,0 50,25 T100,25" fill="none" stroke="black" stroke-width="2"/></svg>'); /* More complex squiggle */
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: -30px;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 0 20px;
+    }
+    .nav-links {
+        margin-left: auto; /* Push links to the right */
+    }
+    .hero-section {
+        flex-direction: column-reverse; /* Image on top of text on smaller screens */
+        text-align: center;
+        padding: 40px 20px;
+        min-height: auto; /* Allow content to dictate height */
+    }
+    .hero-content {
+        margin-right: 0;
+        margin-top: 40px;
+        max-width: 100%;
+    }
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .social-sidebar {
+        position: static; /* Remove absolute positioning */
+        transform: none;
+        flex-direction: row; /* Horizontal layout for social icons */
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 30px;
+        gap: 30px;
+    }
+    .scroll-down {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 300px;
+        height: 400px;
+        padding: 15px;
+        margin-top: 40px; /* Space above the image when stacked */
+    }
+    .image-decoration-line,
+    .image-decoration-squiggly,
+    .image-decoration-dash,
+    .image-decoration-pencil {
+        /* Adjust or hide decorative elements for smaller screens if they cause clutter */
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links, .theme-toggle {
+        display: none; /* Hide desktop nav and theme toggle */
+    }
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+    .navbar {
+        padding: 0 15px;
+    }
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .hero-image {
+        width: 250px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+   
+    .hero-image {
+        width: 200px;
+        height: 300px;
+        padding: 10px;
+    }
+}
 
 /* skill section */
 .section-skill {
