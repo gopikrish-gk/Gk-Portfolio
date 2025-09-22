@@ -996,11 +996,11 @@ ul li {
 
 .title-skill {
     margin-top: 100px;
-    color: #333333;
+    color: green;
     font-size: 2rem;
     margin-bottom: 40px;
     font-weight: 600;
-    text-shadow: 2px 2px 10px #333333;
+    /* text-shadow: 2px 2px 10px green; */
     font-size: 3em;
 
 }
