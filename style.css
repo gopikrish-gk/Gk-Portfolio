@@ -43,7 +43,7 @@ section {
     align-items: center;
     background-color: #EAEAEA;
     transition: 1s;
-    height: 100vh;
+    height: 700px;
     padding: 60px 9% 0;
     overflow: hidden;
 }
@@ -497,8 +497,8 @@ section {
 }
 @media screen and (max-width:576px){
     .circle{
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     background: #D3D3D3;
     position: relative;
@@ -506,6 +506,7 @@ section {
     margin-bottom: 3%;
     margin-top: 15%;
     transition: 1s;
+    
 }
 
 .circle:hover img{
@@ -667,6 +668,59 @@ section {
         opacity: 0;
     }
 }
+/* Extra small devices (up to 376px) */
+@media screen and (max-width: 376px) {
+    .circle {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin-top: 10%;
+        margin-bottom: 5%;
+        transition: 1s;
+    }
+
+    .circle img {
+        position: absolute;
+        width: 80%;
+        height: auto;
+        top: -10%;
+        left: 10%;
+        border-radius: 50%;
+        transition: 1s;
+    }
+
+    .circle:hover {
+        width: 320px;
+        height: auto; /* allow height to grow with content */
+        border-radius: 20px;
+        transition: 1s;
+    }
+
+    .circle:hover img {
+        top: 0%;
+        left: 10%;
+        width: 40%; /* smaller image when hovered */
+    }
+
+    .circle .content {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 90%;
+        padding: 10px;
+        opacity: 1;
+        text-align: center;
+        font-size: 0.9rem;
+        transition: 1s;
+    }
+
+    .circle .abt {
+        font-size: 1.5rem;
+        top: 85%;
+        left: 15%;
+    }
+}
+
 
 /* skill section */
 .section-skill {
