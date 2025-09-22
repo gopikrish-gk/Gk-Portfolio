@@ -588,6 +588,14 @@ section{
         .section-contact{
             height: 100%;
         }
+        .contact-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 90%;
+     
+      padding: 20px;
+    }
     }
 
     .contact-container {
