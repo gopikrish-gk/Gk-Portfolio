@@ -19,6 +19,7 @@
 }
 .hero-section{
     height: 700px;
+    background-color: #EAEAEA !important;
 }
 
 nav {
@@ -971,11 +972,12 @@ section {
 
 /* skill section */
 .section-skill {
-    background-color: #C0C0C0;
+    background-color: #EAEAEA;
     padding: 50px 20px;
     text-align: center;
     font-family: Arial, sans-serif;
     height: 700px;
+    
 }
 
 @media screen and (max-width:760px) {
@@ -999,6 +1001,7 @@ ul li {
     margin-bottom: 40px;
     font-weight: 600;
     text-shadow: 2px 2px 10px #333333;
+    font-size: 3em;
 
 }
 
@@ -1076,7 +1079,7 @@ ul li {
     margin: 0;
     font-family: "Poppins", sans-serif;
 
-    background: linear-gradient(135deg, #ffffff, #808080, #000000);
+    background: #EAEAEA;
 
 
     color: #fff;
