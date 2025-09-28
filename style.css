@@ -1405,7 +1405,7 @@ footer p {
     }
 
     /* overlay */
-    .project-overlay{
+    /* .project-overlay{
       position:absolute; 
       inset:0; 
       background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.95));
@@ -1414,9 +1414,34 @@ footer p {
       justify-content:flex-end; 
       padding:18px; 
       transform:translateY(100%); 
-      transition:transform .32s ease;
+      transition:transform 1s ;
       color: var(--muted);
-    }
+    } */
+
+    .project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(255, 255, 255, 0.95) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
+  color: var(--muted);
+}
+
+/* Hover effect only with .project-overlay */
+.project-overlay:hover {
+  transform: translateY(0);
+  opacity: 1;
+  cursor: pointer;
+}
 
     .project-box:hover .project-overlay, 
     .project-box:focus-within .project-overlay{ 
@@ -1425,14 +1450,19 @@ footer p {
 
     .project-overlay .stack{
       font-size:13px;
-      color:#555;
+      color:whitesmoke;
       margin-bottom:8px;
+      padding: 5px;
+      background: black;
     }
 
     .project-overlay .overlay-desc{
       color:#222;
       font-size:14px;
       margin-bottom:12px;
+      padding: 5px;
+      background: black;
+       color:whitesmoke;
     }
 
     .project-actions{
